@@ -26,7 +26,7 @@ const projects = [
     image: "/portfolioP.png",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     github: "https://github.com/pasandi04/portfolio",
-    live: "https://portfolio.vercel.app",
+    live: "https://pasandiayodya.vercel.app",
   },
 ]
 
