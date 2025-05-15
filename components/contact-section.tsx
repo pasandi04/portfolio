@@ -35,20 +35,48 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus({ type: null, message: "" })
 
-    // Simulate form submission
+    // Replace this URL with your actual form submission endpoint
+    const formSubmissionUrl = "https://formspree.io/f/xovqowoy"
+
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      setSubmitStatus({
-        type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
+      // Create form data for submission
+      const formDataToSubmit = new FormData()
+      formDataToSubmit.append("name", formData.name)
+      formDataToSubmit.append("email", formData.email)
+      formDataToSubmit.append("message", formData.message)
+
+      // Submit the form data to the external URL
+      const response = await fetch(formSubmissionUrl, {
+        method: "POST",
+        body: formDataToSubmit,
+        headers: {
+          Accept: "application/json",
+        },
       })
-      setFormData({ name: "", email: "", message: "" })
+
+      if (response.ok) {
+        // Form submitted successfully
+        setSubmitStatus({
+          type: "success",
+          message: "Message sent successfully! I'll get back to you soon.",
+        })
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        // Form submission failed
+        setSubmitStatus({
+          type: "error",
+          message: "Failed to send message. Please try again.",
+        })
+      }
     } catch (error) {
+      // Network or other error
       setSubmitStatus({
         type: "error",
-        message: "Failed to send message. Please try again.",
+        message: "An error occurred. Please try again later.",
       })
+      console.error("Form submission error:", error)
     } finally {
       setIsSubmitting(false)
     }
@@ -64,7 +92,7 @@ export default function ContactSection() {
     {
       name: "Facebook",
       icon: <Facebook className="h-5 w-5" />,
-      url: "https://www.facebook.com/people/Pasandi-Ayodya/pfbid0nPJigUniDjjGrLYkjgMTLEKMFqCFC41gVzL3n9mfaimP8hkQxM96yhe9A6RZrqkPl/?mibextid=wwXIfr&rdid=ny4lmH0fMiw97ftR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FS81kKscYQtBh8v3Y%2F%3Fmibextid%3DwwXIfr",
+      url: "https://www.facebook.com/profile.php?id=100076208515519",
     },
     {
       name: "LinkedIn",
