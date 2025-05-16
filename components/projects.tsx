@@ -26,7 +26,13 @@ const projects = [
     image: "/portfolioP.png",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     github: "https://github.com/pasandi04/portfolio",
-    live: "https://pasandiayodya.vercel.app",
+  },
+  {
+    title: "E-Commerce Platform",
+    description: "A responsive and user-friendly supermarket website. Built using modern web technologies to provide a seamless online cargo experience.",
+    image: "/cargo.png",
+    tags: ["css", "php", "html"],
+    github: "https://github.com/pasandi04/neco_cargo",
   },
 ]
 
