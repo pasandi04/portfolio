@@ -15,7 +15,7 @@ export default function About() {
                           transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
               <img
-                src="/profilePic3.jpeg?height=300&width=300"
+                src="/profilePic7.jpeg?height=1000&width=500"
                 alt="Pasandi Ayodya"
                 className="object-cover w-full h-full"
               />
