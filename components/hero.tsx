@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4"> 
-          <a href="/GHPAyodyaResume.pdf" download className="w-full sm:w-auto">
+          <a href="/Ayodyacv.pdf" download className="w-full sm:w-auto">
             <Button className="gap-2">
               <Download size={18} />
               Download CV

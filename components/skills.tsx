@@ -58,6 +58,10 @@ export default function Skills() {
       name: "jquery",
       icon: "/assets/skills/jquery.png",
     },
+    {
+      name: ".Net",
+      icon: "/assets/skills/images.png",
+    },
   ]
 
   return (
